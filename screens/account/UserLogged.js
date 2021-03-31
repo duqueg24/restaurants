@@ -1,12 +1,31 @@
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import { Button } from "react-native-elements";
+import { useNavigation } from "@react-navigation/native";
+import { closeSession } from "../../utils/actions";
 
 export default function UserLogged() {
-    return (
-        <View>
-            <Text> UserLogged...</Text>
-        </View>
-    )
+  const navigation = useNavigation();
+
+  return (
+    <View>
+      <Text> UserLogged...</Text>
+      <Button
+        title="Cerrar sesion"
+        onPress={() => {
+          closeSession();
+          navigation.navigate("restaurants");
+        }}
+        containerStyle={styles.btnContainer}
+      />
+    </View>
+  );
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  btnContainer: {
+    marginTop: 20,
+    width: "95%",
+    alignSelf: "center",
+  },
+});

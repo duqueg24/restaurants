@@ -2,12 +2,11 @@ import React from "react";
 
 import { Image } from "react-native";
 import { StyleSheet, Text, View, ScrollView } from "react-native";
-import {Button} from 'react-native-elements'
-import {useNavigation} from '@react-navigation/native'
+import { Button } from "react-native-elements";
+import { useNavigation } from "@react-navigation/native";
 
 export default function UserGuest() {
-
-  const navigation = useNavigation()
+  const navigation = useNavigation();
 
   return (
     <ScrollView centerContent style={styles.viewBody}>
@@ -17,13 +16,17 @@ export default function UserGuest() {
         style={styles.image}
       />
       <Text style={styles.tittle}>Consulta tu perfil en Restaurants</Text>
-      <Text style={styles.description}>¿Cómo describirías tu mejor restaurante?, Busca y     visualiza los mejores restaurantes de una forma sencilla, vota cual te ha gustado mas y comenta como ha sido tu experiencia.      
-     </Text>
-     <Button
+      <Text style={styles.description}>
+        ¿Cómo describirías tu mejor restaurante?, Busca y visualiza los mejores
+        restaurantes de una forma sencilla, vota cual te ha gustado mas y
+        comenta como ha sido tu experiencia.
+      </Text>
+      <Button
+        title="Iniciar Sesion"
         buttonStyle={styles.button}
-        tittle ="Ver tu pefil"
-        onPress={()=> navigation.navigate("login")}
-     />
+        tittle="Ver tu pefil"
+        onPress={() => navigation.navigate("login")}
+      />
     </ScrollView>
   );
 }
@@ -33,10 +36,9 @@ const styles = StyleSheet.create({
     marginHorizontal: 30,
   },
   image: {
-    width: 300,
+    height: 150,
     width: "100%",
-    marginBottom: 10,
-   
+    marginBottom: 20,
   },
   titlle: {
     fontWeight: "bold",
@@ -44,12 +46,14 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     textAlign: "center",
   },
-  description:{
-    textAlign:"justify",  
-    color:"#a65273",
-    marginBottom:20
+  description: {
+    textAlign: "justify",
+    color: "#a65273",
+    marginBottom: 20,
   },
-  button:{
-    backgroundColor:"#442484"
-  }
+  button: {
+    color: "#442484",
+    fontWeight: "bold",
+  },
 });
+
