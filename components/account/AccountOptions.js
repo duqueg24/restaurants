@@ -2,6 +2,7 @@ import { map } from "lodash";
 import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Icon, ListItem } from "react-native-elements";
+import ChangePasswordForm from "../../screens/account/ChangePasswordForm";
 import Modal from "../Modal";
 import ChangeDisplayNameForm from "./ChangeDisplayNameForm";
 import ChangeEmailForm from "./ChangeEmailForm";
@@ -62,7 +63,12 @@ export default function AccountOptions({ user, toastRef,setRelodUser }) {
         );
         break;
       case "password":
-        setRenderComponent(<Text>password</Text>);
+        setRenderComponent(
+          <ChangePasswordForm
+            setShowModal={setShowModal}
+            toastRef={toastRef}
+          />
+        );
         break;
     }
     setShowModal(true);
